@@ -1,5 +1,6 @@
 package com.mybatis.test;
 
+import com.google.gson.Gson;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -33,6 +34,7 @@ public class AppCxt {
         List<Map<String, Object>> resultList = jdbcTemplate.queryForList("select * from user");
         if(resultList != null) {
             System.out.println("记录数为:" + resultList.size());
+            System.out.println(new Gson().toJson(resultList));
         } else {
             System.out.println("结果为空。。。");
         }

@@ -23,7 +23,7 @@
 
         <!-- 数据库链接地址账号密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://10.60.58.118:3306/credit_risk"
+                        connectionURL="jdbc:mysql://localhost:3306/localtestdb"
                         userId="order_t_w"
                         password="NTk3NjIyYmJmNDY">
         </jdbcConnection>
@@ -33,18 +33,18 @@
         </javaTypeResolver>
 
         <!-- 生成Model类存放位置 每次用，每次修改，不用保存，只是临时工具-->
-        <javaModelGenerator targetPackage="com.lejr.scf.risk.pojo" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.mybatis.rewrite.domain" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!--XML 文件-->
-        <sqlMapGenerator targetPackage="META-INF/mybatis/mapper" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="org/mybatis/mapper" targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
         <!--dao文件-->
-        <javaClientGenerator targetPackage="com.lejr.scf.risk.dao"
+        <javaClientGenerator targetPackage="com.mybatis.rewrite.dao"
                              type="XMLMAPPER" targetProject="src/main/java">
         </javaClientGenerator>
 
@@ -55,7 +55,7 @@
              <table tableName="MAIL_SMS_RULE" domainObjectName="MailSmsRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
         -->
        <!-- <table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
-        <table tableName="credit_blacklist_info" domainObjectName="JrCreditBlackList" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="login_user" domainObjectName="LoginUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>
 
 

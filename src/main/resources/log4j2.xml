@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="off">
 	<Properties>
-		<Property name="base">/letv/Logs/credit-datacenter/</Property>
+		<Property name="base">G:/tmp</Property>
 		<Property name="serverName">default</Property>
 		<Property name="logLevel">INFO</Property>
 	</Properties>
@@ -10,7 +10,7 @@
 			<PatternLayout pattern="%d %p %C{1.} [%t] %m%n" />
 		</Console>
 		<RollingFile name="RollingFileApp"
-			fileName="${base}/${sys:serverName}/credit-datacenter-web.log"
+			fileName="${base}/${sys:serverName}/mybatis-rewrite.log"
 			filePattern="${base}/${sys:serverName}/%d{yyyy-MM-dd}.log">
 			<PatternLayout>
 				<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
@@ -24,7 +24,7 @@
 	<Loggers>
 		<Root level="${logLevel}" includeLocation="false">
 			<AppenderRef ref="RollingFileApp" />
-			<!--AppenderRef ref="STDOUT" /-->
+			<AppenderRef ref="STDOUT" />
 		</Root>
 	</Loggers>
 </Configuration>
