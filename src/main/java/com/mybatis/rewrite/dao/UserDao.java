@@ -12,4 +12,6 @@ public interface UserDao {
 
     public User queryUser(@Param("id") Long id);
 
+    public int insertUser(User user);
+
 }

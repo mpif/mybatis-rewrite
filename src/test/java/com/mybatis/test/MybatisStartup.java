@@ -40,8 +40,11 @@ public class MybatisStartup {
                     "com.mybatis.rewrite.dao.UserDao.queryUser", 1L);
             System.out.println(user);
 
-            System.out.println(user.getId());
-
+            if(user != null) {
+                System.out.println(user.getId());
+            } else {
+                System.out.println("user is null");
+            }
 
 
         } catch (IOException e) {
